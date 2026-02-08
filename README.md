@@ -20,6 +20,33 @@ Tushare Pro financial data API skill for [OpenClaw](https://openclaw.ai) - Query
 - 🏢 **Company Fundamentals** - Basic info, IPO calendar
 - 📅 **Trading Calendar** - Exchange holidays, trading days
 
+### 📸 Usage Examples
+
+#### 1. Baijiu Giants Comparison Report
+Compare top 3 Chinese liquor companies (Moutai, Wuliangye, Luzhou Laojiao)
+
+![Baijiu Comparison](assets/examples/baijiu-comparison.jpg)
+
+#### 2. Daily Top Gainers
+Query top 10 stocks with highest gains
+
+![Top 10 Gainers](assets/examples/top10-gainers.jpg)
+
+#### 3. Individual Stock Analysis
+Detailed financial report for specific stocks (e.g., Moutai)
+
+![Moutai Financial](assets/examples/maotai-financial.jpg)
+
+#### 4. Annual Report Analysis
+Complete annual report with balance sheet, income statement, cash flow
+
+![Zijin Mining Annual](assets/examples/zijin-mining-annual.jpg)
+
+#### 5. Index Comparison
+Compare different market indices (CSI 300, SSE 50, etc.)
+
+![Index Comparison](assets/examples/index-comparison.jpg)
+
 ### Installation
 
 ```bash
@@ -72,6 +99,33 @@ Once installed, you can ask OpenClaw:
 - 📊 **市场数据** - 资金流向、涨跌停股票、龙虎榜
 - 🏢 **公司基本面** - 基础信息、IPO 日历
 - 📅 **交易日历** - 交易所节假日、交易日
+
+### 📸 使用示例
+
+#### 1. 白酒三巨头对比报告
+对比茅台、五粮液、泸州老窖的财务数据
+
+![白酒对比](assets/examples/baijiu-comparison.jpg)
+
+#### 2. 每日涨幅榜
+查询涨幅最大的前10只股票
+
+![涨幅榜](assets/examples/top10-gainers.jpg)
+
+#### 3. 个股财务分析
+单只股票的详细财务报告（如茅台）
+
+![茅台财务](assets/examples/maotai-financial.jpg)
+
+#### 4. 年报分析
+完整的年报数据，包括资产负债表、利润表、现金流量表
+
+![紫金矿业年报](assets/examples/zijin-mining-annual.jpg)
+
+#### 5. 指数对比
+对比不同市场指数（沪深300、上证50等）
+
+![指数对比](assets/examples/index-comparison.jpg)
 
 ### 安装
 
