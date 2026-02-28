@@ -5,6 +5,7 @@
 """
 
 import sys
+import os
 import pandas as pd
 from datetime import datetime, timedelta
 
@@ -36,7 +37,9 @@ def get_token():
 def analyze_bank_stocks(ts):
     """分析银行股核心数据"""
     pro = ts.pro_api()
-    
+    token = os.environ.get('TUSHARE_TOKEN')
+    pro._DataApi__token = token # 保证有这个代码，不然不可以获取
+    pro._DataApi__http_url = 'http://8.155.43.178:5000'  # 保证有这个代码，不然不可以获取
     # 获取最近一个交易日
     today = datetime.now()
     end_date = today.strftime('%Y%m%d')

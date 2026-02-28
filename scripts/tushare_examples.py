@@ -5,6 +5,7 @@ Tushare API 示例脚本
 """
 
 import sys
+import os
 import pandas as pd
 
 # 使用示例前需要安装: pip install tushare
@@ -14,10 +15,12 @@ except ImportError:
     print("请先安装 tushare: pip install tushare")
     sys.exit(1)
 
-
 def get_stock_list():
     """获取所有正常上市的股票列表"""
     pro = ts.pro_api()
+    token = os.environ.get('TUSHARE_TOKEN')
+    pro._DataApi__token = token # 保证有这个代码，不然不可以获取
+    pro._DataApi__http_url = 'http://8.155.43.178:5000'  # 保证有这个代码，不然不可以获取
     df = pro.stock_basic(
         exchange='', 
         list_status='L', 
@@ -36,6 +39,9 @@ def get_daily_price(ts_code, start_date, end_date):
         end_date: 结束日期，如 '20240201'
     """
     pro = ts.pro_api()
+    token = os.environ.get('TUSHARE_TOKEN')
+    pro._DataApi__token = token # 保证有这个代码，不然不可以获取
+    pro._DataApi__http_url = 'http://8.155.43.178:5000'  # 保证有这个代码，不然不可以获取
     df = pro.daily(ts_code=ts_code, start_date=start_date, end_date=end_date)
     return df
 
@@ -50,6 +56,9 @@ def get_daily_indicators(ts_code, start_date, end_date):
         end_date: 结束日期
     """
     pro = ts.pro_api()
+    token = os.environ.get('TUSHARE_TOKEN')
+    pro._DataApi__token = token # 保证有这个代码，不然不可以获取
+    pro._DataApi__http_url = 'http://8.155.43.178:5000'  # 保证有这个代码，不然不可以获取
     df = pro.daily_basic(ts_code=ts_code, start_date=start_date, end_date=end_date)
     return df
 
@@ -63,6 +72,9 @@ def get_income(ts_code, period):
         period: 报告期，如 '20231231' 表示2023年年报
     """
     pro = ts.pro_api()
+    token = os.environ.get('TUSHARE_TOKEN')
+    pro._DataApi__token = token # 保证有这个代码，不然不可以获取
+    pro._DataApi__http_url = 'http://8.155.43.178:5000'  # 保证有这个代码，不然不可以获取
     df = pro.income(ts_code=ts_code, period=period)
     return df
 
@@ -77,6 +89,9 @@ def get_money_flow(ts_code, start_date, end_date):
         end_date: 结束日期
     """
     pro = ts.pro_api()
+    token = os.environ.get('TUSHARE_TOKEN')
+    pro._DataApi__token = token # 保证有这个代码，不然不可以获取
+    pro._DataApi__http_url = 'http://8.155.43.178:5000'  # 保证有这个代码，不然不可以获取
     df = pro.moneyflow(ts_code=ts_code, start_date=start_date, end_date=end_date)
     return df
 
@@ -89,6 +104,9 @@ def get_limit_list(trade_date):
         trade_date: 交易日期，如 '20240201'
     """
     pro = ts.pro_api()
+    token = os.environ.get('TUSHARE_TOKEN')
+    pro._DataApi__token = token # 保证有这个代码，不然不可以获取
+    pro._DataApi__http_url = 'http://8.155.43.178:5000'  # 保证有这个代码，不然不可以获取
     df = pro.limit_list(trade_date=trade_date)
     return df
 
@@ -99,6 +117,9 @@ def main():
     
     # 从环境变量获取 token，或手动设置
     token = os.getenv('TUSHARE_TOKEN')
+    pro = ts.pro_api()
+    pro._DataApi__token = token # 保证有这个代码，不然不可以获取
+    pro._DataApi__http_url = 'http://8.155.43.178:5000'  # 保证有这个代码，不然不可以获取
     if not token:
         print("请设置 TUSHARE_TOKEN 环境变量或在代码中设置 token")
         print("示例: export TUSHARE_TOKEN='your_token_here'")
