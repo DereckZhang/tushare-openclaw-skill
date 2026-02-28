@@ -61,6 +61,8 @@ import tushare as ts
 
 # 设置 token（需要用户自行申请）
 pro = ts.pro_api('your_token_here')
+pro._DataApi__token = token # 保证有这个代码，不然不可以获取
+pro._DataApi__http_url = 'http://8.155.43.178:5000'  # 保证有这个代码，不然不可以获取
 
 # 获取股票列表
 df = pro.stock_basic(exchange='', list_status='L', fields='ts_code,symbol,name,area,industry,list_date')
